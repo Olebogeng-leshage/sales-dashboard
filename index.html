@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SA Sales Analytics Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+
+<div>
+<h1>📊 SA Sales Analytics</h1>
+<p>South African Business Intelligence Dashboard</p>
+</div>
+
+<button id="themeButton">🌙</button>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- KPI CARDS -->
+
+<section class="kpi-grid">
+
+<div class="kpi-card">
+
+<span>💰 Revenue</span>
+
+<h2 id="totalRevenue">R0</h2>
+
+<small id="revenueGrowth">▲ 0%</small>
+
+</div>
+
+
+<div class="kpi-card">
+
+<span>📈 Profit</span>
+
+<h2 id="totalProfit">R0</h2>
+
+<small id="profitGrowth">▲ 0%</small>
+
+</div>
+
+
+<div class="kpi-card">
+
+<span>📦 Orders</span>
+
+<h2 id="totalOrders">0</h2>
+
+<small id="ordersGrowth">▲ 0%</small>
+
+</div>
+
+
+<div class="kpi-card">
+
+<span>👥 Customers</span>
+
+<h2 id="totalCustomers">0</h2>
+
+<small>Active customers</small>
+
+</div>
+
+</section>
+
+
+<!-- FILTERS -->
+
+<section class="panel">
+
+<h2>🔎 Filters</h2>
+
+<div class="filters">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search product..."
+>
+
+
+<select id="provinceFilter">
+
+<option value="all">All Provinces</option>
+
+</select>
+
+
+<select id="categoryFilter">
+
+<option value="all">All Categories</option>
+
+</select>
+
+
+<select id="monthFilter">
+
+<option value="all">All Months</option>
+
+</select>
+
+</div>
+
+</section>
+
+
+<!-- INSIGHTS -->
+
+<section class="panel">
+
+<h2>🤖 Business Insights</h2>
+
+<div id="insights">
+
+Loading insights...
+
+</div>
+
+</section>
+
+
+<!-- CHARTS -->
+
+<section class="chart-grid">
+
+
+<div class="panel">
+
+<h2>📈 Monthly Revenue</h2>
+
+<canvas id="monthlyChart"></canvas>
+
+</div>
+
+
+<div class="panel">
+
+<h2>🥧 Sales by Category</h2>
+
+<canvas id="categoryChart"></canvas>
+
+</div>
+
+
+<div class="panel">
+
+<h2>📍 Sales by Province</h2>
+
+<canvas id="provinceChart"></canvas>
+
+</div>
+
+
+<div class="panel">
+
+<h2>📦 Product Performance</h2>
+
+<canvas id="productChart"></canvas>
+
+</div>
+
+</section>
+
+
+<!-- TOP PRODUCTS -->
+
+<section class="panel">
+
+<div class="section-header">
+
+<h2>🏆 Top 5 Products</h2>
+
+</div>
+
+<div id="topProducts"></div>
+
+</section>
+
+
+<!-- SALES TABLE -->
+
+<section class="panel">
+
+<div class="section-header">
+
+<h2>📋 Sales Transactions</h2>
+
+<button id="downloadButton">
+
+⬇ Download CSV
+
+</button>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+
+<th>Category</th>
+
+<th>Province</th>
+
+<th>Month</th>
+
+<th>Orders</th>
+
+<th>Revenue</th>
+
+<th>Profit</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="salesTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>SA Sales Analytics Dashboard © 2026</p>
+
+<p>Built with HTML, CSS & JavaScript</p>
+
+</footer>
+
+
+<script src="data.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
